@@ -18,7 +18,7 @@ const DataList = ({list, onPress, setDisplay}) =>
   }
   </div>
 
-function SearcInput({value, placeholder, list, onChange, onPress}) {
+function SearcInput({value, placeholder, list, onChange, onPress, setCountry}) {
   const [display, setDisplay] = useState(false)
   
   return (
@@ -30,7 +30,10 @@ function SearcInput({value, placeholder, list, onChange, onPress}) {
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          onFocus={() => setDisplay(true)}
+          onFocus={() => {
+            setCountry({})
+            setDisplay(true)
+          }}
           spellCheck={false}
         />
         {value !== '' && display && <DataList list={list} onPress={onPress} setDisplay={setDisplay}/>}

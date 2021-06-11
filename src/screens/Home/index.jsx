@@ -14,7 +14,7 @@ const Home = () =>  {
   })
 
   const handleChange = e => {
-    const inputValue = e.target.value;
+    const inputValue = e.target.value || "";
     let newList = [...searchState.all]
     newList = newList.filter(item => {
       if (item.name.toLowerCase().includes(inputValue.toLowerCase())) {
@@ -69,9 +69,16 @@ const Home = () =>  {
     <div className="home__container">
       <div className="home__topContainer">
         <h1 className="home__title">Meet the world</h1>
-        <SearchInput {...searchState} onPress={setValue} onChange={handleChange}/>
+        <SearchInput 
+          {...searchState} 
+          setCountry={setCountry}
+          onPress={setValue} 
+          onChange={handleChange}
+        />
       </div>
-      <CardCountry country={country}/>
+      {Object.keys(country).length > 0 &&
+        <CardCountry country={country}/>
+      }
     </div>
   )
 }

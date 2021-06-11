@@ -45,3 +45,14 @@ input::-webkit-calendar-picker-indicator {
   background-color: rgb(211, 211, 211, .3);
 }
 
+@media (max-width: 600px)  {
+  .search__container {
+    width: 380px;
+  }  
+}
+
+@media (max-width: 400px)  {
+  .search__container {
+    width: 320px;
+  }  
+}

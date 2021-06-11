@@ -4,29 +4,38 @@ import './styles.css'
 
 const CardCountry = ({country}) => 
   <div className="card__container">
-    <div className="card">
+    <div className="card__country-name">
       <h2>{country.name}</h2> 
-      <span>{country.alpha3Code}</span>
     </div>
     <div className="card">
       <h3>Capital city</h3>
-      <span>{country.capital}</span>
+      <div className="card__rigthSize">
+        <p>{country.capital}</p>
+      </div>
     </div>  
     <div className="card">
       <h3>Land area</h3>
-      <span>{country.area}</span>
+      <div className="card__rigthSize">
+        <p>{country.area} km2</p>
+      </div>
     </div>  
     <div className="card">
-      <h3 className="card">Population</h3>
-      <span>{country.population}</span>
+      <h3>Population</h3>
+      <div className="card__rigthSize">
+        <p>{country.population}</p>
+      </div>
     </div>  
     <div className="card">
       <h3>Languaje</h3>
-      <span className="card">{country.languages}</span>
+      <div className="card__rigthSize">
+        <p>{country.languages}</p>
+      </div>
     </div>  
     <div className="card">
       <h3>Currency</h3>
-      <span>{country.currencies}</span>
+      <div className="card__rigthSize">
+        <p>{country.currencies}</p>
+      </div>
     </div>
   </div>
 
