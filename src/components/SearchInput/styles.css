@@ -1,0 +1,47 @@
+.search__container {
+  width: 460px;
+  height: auto;
+  display: block;
+  background-color: white;
+  border: 1px solid transparent;
+  box-shadow: 0 0 5px 3px rgb(0 0 0 / 10%);
+  border-radius: 15px;
+}
+
+.search__input {
+  width: 80%;
+  height: 35px;
+  margin-left: 17px;
+  outline: none;
+  border: 1px solid transparent;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.search__datalist {
+  background-color: white;
+  margin-top: -10px;
+  padding-top: 5px;
+  max-height: 148px;
+  border: 1px solid transparent;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.search__datalist__item {
+  padding: 5px;
+  padding-left: 20px;
+  cursor: default;
+  z-index: 1000;
+}
+
+.search__datalist__item:hover {
+  background-color: rgb(211, 211, 211, .3);
+}
+
