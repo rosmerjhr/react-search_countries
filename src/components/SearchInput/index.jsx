@@ -13,6 +13,7 @@ const DataList = ({list, onPress, setDisplay}) =>
         }}
       >
         {country.name}
+        <img style={{width: 20, height: 15, marginLeft: 20}} src={country.flag} alt=""/>
       </div>
     )
   }

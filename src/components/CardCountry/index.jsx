@@ -4,8 +4,11 @@ import './styles.css'
 
 const CardCountry = ({country}) => 
   <div className="card__container">
-    <div className="card__country-name">
-      <h2>{country.name}</h2> 
+    <div className="card">
+      <h2>{country.name}</h2>
+      <div className="card__rigthSize">
+        <img className="card__country-flag" src={country.flag} alt="flag of the country"/>
+      </div>  
     </div>
     <div className="card">
       <h3>Capital city</h3>

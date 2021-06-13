@@ -7,6 +7,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  border: 1px solid transparent;
+  border-radius: 10px;
 }
 
 .card {
@@ -17,12 +19,9 @@
   margin: 7px;
 }
 
-.card__country-name {
-  width: 85%;
-  margin: 7px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
+.card__country-flag {
+  width: 45px;
+  height: 30px;
 }
 
 .card__rigthSize {

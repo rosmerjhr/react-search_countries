@@ -13,6 +13,8 @@ const Home = () =>  {
     all: []
   })
 
+  const showCard = Object.keys(country).length > 0 ? true : false 
+
   const handleChange = e => {
     const inputValue = e.target.value || "";
     let newList = [...searchState.all]
@@ -53,7 +55,8 @@ const Home = () =>  {
         data.map(country => 
           countries.push({ 
             name: country.name, 
-            alpha3Code: country.alpha3Code 
+            alpha3Code: country.alpha3Code,
+            flag: country.flag 
           })
         )
         setSearchState({
@@ -76,7 +79,7 @@ const Home = () =>  {
           onChange={handleChange}
         />
       </div>
-      {Object.keys(country).length > 0 &&
+      {showCard &&
         <CardCountry country={country}/>
       }
     </div>
