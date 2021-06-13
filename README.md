@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Search Countries
+
+The project consists of a website that contains a search engine that will suggest country names as you click on the input and when selecting a result, it shows you a card with the data of that country
+
+The project is developed in react.js and the data on the countries are obtained from the API https://restcountries.eu/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
