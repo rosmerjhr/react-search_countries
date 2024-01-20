@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css'
 
-const CardCountry = ({country}) => 
+const CardCountry = ({ country }) => 
   <div className="card__container">
     <div className="card">
       <h2>{country.name}</h2>

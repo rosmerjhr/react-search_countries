@@ -1,15 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './styles.css'
 
-const DataList = ({list, onPress, setDisplay}) => 
+const DataList = ({list, onPress}) => 
   <div className="search__datalist" role="listbox">
-    {list.length > 0 && list.map(country => 
+    {list.map((country) => 
       <div  
         key={`id:${country.alpha3Code}`}
         className="search__datalist__item"
         onClick={() => {
           onPress(country.name)
-          setDisplay(false)
         }}
       >
         {country.name}
@@ -19,8 +18,8 @@ const DataList = ({list, onPress, setDisplay}) =>
   }
   </div>
 
-function SearcInput({value, placeholder, list, onChange, onPress, setCountry}) {
-  const [display, setDisplay] = useState(false)
+function SearcInput({value, filteredCountries, onChange, onPress}) {
+  const showDataList = Boolean(filteredCountries.length);
   
   return (
     <div>
@@ -28,16 +27,14 @@ function SearcInput({value, placeholder, list, onChange, onPress, setCountry}) {
         <input
           className="search__input" 
           type="text"
-          placeholder={placeholder}
+          placeholder="Find a country"
           value={value}
           onChange={onChange}
-          onFocus={() => {
-            setCountry({})
-            setDisplay(true)
-          }}
           spellCheck={false}
         />
-        {value !== '' && display && <DataList list={list} onPress={onPress} setDisplay={setDisplay}/>}
+        {showDataList && (
+          <DataList list={filteredCountries} onPress={onPress} />
+        )}
       </div>
     </div>
   )

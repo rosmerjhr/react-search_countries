@@ -1,32 +1,31 @@
-import axios from 'axios';
+import axios from "axios";
 
-const URL = 'https://restcountries.eu/rest/v2'
+const BASE_URL = "https://restcountries.com/v3.1";
 
-export const getCountry = name => {
+export const getCountry = (name) => {
   return new Promise((resolve, reject) => {
     axios({
-      method: 'GET',
-      url: `${URL}/name/${name}`,
+      method: "GET",
+      url: `${BASE_URL}/name/${name}`,
       headers: {
-        'Content-Type': 'application/json',
-      }, 
+        "Content-Type": "application/json",
+      },
     })
-    .then(data => resolve(data.data[0]))
-    .catch(error => reject(error))
-  })
-}
+      .then((data) => resolve(data.data[0]))
+      .catch((error) => reject(error));
+  });
+};
 
 export const getAllCountries = () => {
   return new Promise((resolve, reject) => {
     axios({
-      method: 'GET',
-      url: `${URL}/all`,
+      method: "GET",
+      url: `${BASE_URL}/all`,
       headers: {
-        'Content-Type': 'application/json',
-      }, 
+        "Content-Type": "application/json",
+      },
     })
-    .then(data => resolve(data.data))
-    .catch(error => reject(error))
-  })
-}
-
+      .then((data) => resolve(data.data))
+      .catch((error) => reject(error));
+  });
+};
